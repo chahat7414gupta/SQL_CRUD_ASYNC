@@ -33,8 +33,7 @@ A simple **asynchronous chat backend** built with **FastAPI**, **async SQLAlchem
 └── README.md
 
 yaml
-Copy
-Edit
+
 
 ---
 
@@ -43,52 +42,56 @@ Edit
 ### 1. Clone and create virtual environment
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/chahat7414gupta/SQL_CRUD_ASYNC/
+```
+```bash
 cd chat-app
+```
+```bash
 python3.10 -m venv venv
+```
+```bash
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 2. Install dependencies
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
+```
 3. Run the app
-bash
-Copy
-Edit
+```bash
 uvicorn app.main:app --reload
+```
 Then open: http://127.0.0.1:8000/docs
 
 💬 API Usage (cURL)
 👤 Create a User
-bash
-Copy
-Edit
+```bash
+
 curl -X POST http://127.0.0.1:8000/users/ \
 -H "Content-Type: application/json" \
 -d '{"name": "Alice", "email": "alice@example.com"}'
+```
 👤 List Users
-bash
-Copy
-Edit
+```bash
+
 curl http://127.0.0.1:8000/users/
+```
 💌 Send a Message
-bash
-Copy
-Edit
+```bash
 curl -X POST http://127.0.0.1:8000/messages/ \
 -H "Content-Type: application/json" \
 -d '{"sender_id": 1, "receiver_id": 2, "content": "Hello there!"}'
+```
 💌 Get All Messages
-bash
-Copy
-Edit
+```bash
+
 curl http://127.0.0.1:8000/messages/
+```
 🔁 Get Conversation Between Two Users
-bash
-Copy
-Edit
+```bash
+
 curl "http://127.0.0.1:8000/messages/conversation?user1=1&user2=2"
+```
 🧠 Extensibility Ideas
 Add WebSocket support for real-time chat
 
@@ -111,4 +114,5 @@ Uvicorn
 
 👤 Author
 Chahat Gupta
+
 
